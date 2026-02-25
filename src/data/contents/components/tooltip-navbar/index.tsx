@@ -18,14 +18,14 @@ import {
   Menu,
   CommandIcon,
 } from 'lucide-react';
-import { Command } from 'cmdk';
+
 
 interface TooltipNavbarProps {
   items: TooltipItem[];
   tooltipDelay?: number;//in ms
 }
 
-const items: TooltipItem[] = [
+const DEFAULT_ITEMS: TooltipItem[] = [
   {
     icon: <MessageCircle className="h-full w-full" />,
     label: 'Comment',
@@ -63,7 +63,7 @@ const items: TooltipItem[] = [
     hasBadge: false,
   },
 ];
-export const TooltipNavbar = ({ items,tooltipDelay = 300 }: TooltipNavbarProps) => {
+export const TooltipNavbar = ({ items = DEFAULT_ITEMS, tooltipDelay = 300 }: TooltipNavbarProps) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [coords, setCoords] = useState({ clipPath: '', translateX: 0 });
 
