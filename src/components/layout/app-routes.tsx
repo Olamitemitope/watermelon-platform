@@ -2,11 +2,18 @@ import { lazy, Suspense } from "react";
 import {
   Routes,
   Route,
-  Navigate,
   useMatch,
 } from "react-router-dom";
 import { PageLayout } from "@/components/layout/page-layout";
-import { HomePageSkeleton, ComponentPageSkeleton, DocPageSkeleton } from "@/components/skeletons";
+import {
+  HomePageSkeleton,
+  ComponentPageSkeleton,
+  DocPageSkeleton,
+  DashboardsPageSkeleton,
+  BlocksPageSkeleton,
+  DashboardPageSkeleton,
+  BlockPageSkeleton,
+} from "@/components/skeletons";
 
 const HomePage = lazy(() => import("@/pages/home"));
 const ComponentsPage = lazy(() => import("@/pages/components"));
@@ -24,9 +31,31 @@ const DashboardPage = lazy(() => import("@/pages/dashboard"));
 const BlocksPage = lazy(() => import("@/pages/blocks"));
 const BlockPage = lazy(() => import("@/pages/block"));
 const ChangelogPage = lazy(() => import("@/pages/changelog"));
+const NotFoundPage = lazy(() => import("@/pages/not-found"));
+const PreviewPage = lazy(() => import("@/pages/preview"));
 
 export function AppRoutes() {
   const isComponentPage = useMatch("/components/:slug");
+  const isPreview = useMatch("/preview/:type/:slug");
+
+  if (isPreview) {
+    return (
+      <Routes>
+        <Route
+          path="/preview/:type/:slug"
+          element={
+            <Suspense fallback={
+              <div className="flex h-screen w-screen items-center justify-center">
+                <div className="h-4 w-4 border-2 border-foreground border-t-transparent rounded-full animate-spin" />
+              </div>
+            }>
+              <PreviewPage />
+            </Suspense>
+          }
+        />
+      </Routes>
+    );
+  }
 
   return (
     <PageLayout showScrollProgress={!isComponentPage}>
@@ -140,7 +169,7 @@ export function AppRoutes() {
         <Route
           path="/dashboards"
           element={
-            <Suspense fallback={<HomePageSkeleton />}>
+            <Suspense fallback={<DashboardsPageSkeleton />}>
               <DashboardsPage />
             </Suspense>
           }
@@ -148,7 +177,7 @@ export function AppRoutes() {
         <Route
           path="/dashboard/:slug"
           element={
-            <Suspense fallback={<DocPageSkeleton />}>
+            <Suspense fallback={<DashboardPageSkeleton />}>
               <DashboardPage />
             </Suspense>
           }
@@ -158,7 +187,7 @@ export function AppRoutes() {
         <Route
           path="/blocks"
           element={
-            <Suspense fallback={<HomePageSkeleton />}>
+            <Suspense fallback={<BlocksPageSkeleton />}>
               <BlocksPage />
             </Suspense>
           }
@@ -166,14 +195,21 @@ export function AppRoutes() {
         <Route
           path="/block/:slug"
           element={
-            <Suspense fallback={<DocPageSkeleton />}>
+            <Suspense fallback={<BlockPageSkeleton />}>
               <BlockPage />
             </Suspense>
           }
         />
 
-        {/* Fallback */}
-        <Route path="*" element={<Navigate to="/" replace />} />
+        {/* 404 */}
+        <Route
+          path="*"
+          element={
+            <Suspense fallback={<DocPageSkeleton />}>
+              <NotFoundPage />
+            </Suspense>
+          }
+        />
       </Routes>
     </PageLayout>
   );
