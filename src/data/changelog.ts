@@ -23,157 +23,182 @@ export interface ChangelogEntry {
 
 export const changelogData: ChangelogEntry[] = [
   {
-    version: "1.2.3",
-    date: "Feb 22, 2026",
+    version: '1.2.4',
+    date: 'Mar 7, 2026',
     stats: [
-      { label: "Total Components", count: 123, href: "/components" },
-      { label: "New Dashboards", count: 15, href: "/dashboards" },
-      { label: "New Blocks", count: 5, href: "/blocks" },
+      { label: 'Total Components', count: 128, href: '/components' },
+      { label: 'Total Dashboards', count: 17, href: '/dashboards' },
     ],
     sections: [
       {
-        title: "New Version: Added Dashboards and Blocks",
+        title: 'New Version: Improvements and New Dashboards',
         items: [
           {
-            text: "Added 15 new dashboards to the registry with polished previews and copy-ready install commands."
+            text: 'Fixed bugs and errors across existing components to improve stability and usability.',
           },
           {
-            text: "Added 5 new blocks to the registry with polished previews and copy-ready install commands."
+            text: 'Added 5 new components to the registry with polished previews and copy-ready install commands.',
           },
           {
-            text: "Added 38 new components to the registry with polished previews and copy-ready install commands."
-          }
-        ]
-      }
-    ]
+            text: 'Added 2 new dashboards to the registry with improved functionality and better integration.',
+          },
+          {
+            text: 'Enhanced functionality across all dashboards for a smoother and more consistent experience.',
+          },
+        ],
+      },
+    ],
   },
   {
-    version: "1.2.2",
-    date: "Feb 15, 2026",
+    version: '1.2.3',
+    date: 'Feb 22, 2026',
     stats: [
-      { label: "Total Components", count: 85, href: "/components" },
+      { label: 'Total Components', count: 123, href: '/components' },
+      { label: 'New Dashboards', count: 15, href: '/dashboards' },
+      { label: 'New Blocks', count: 5, href: '/blocks' },
     ],
     sections: [
       {
-        title: "Launch",
+        title: 'New Version: Added Dashboards and Blocks',
         items: [
           {
-            text: "Watermelon UI is now live with a comprehensive collection of React components."
+            text: 'Added 15 new dashboards to the registry with polished previews and copy-ready install commands.',
           },
           {
-            text: "launched with 85+ components in the initial release."
-          }
-        ]
-      }
-    ]
+            text: 'Added 5 new blocks to the registry with polished previews and copy-ready install commands.',
+          },
+          {
+            text: 'Added 38 new components to the registry with polished previews and copy-ready install commands.',
+          },
+        ],
+      },
+    ],
   },
   {
-    version: "1.2.1",
-    date: "Feb 12, 2026",
+    version: '1.2.2',
+    date: 'Feb 15, 2026',
+    stats: [{ label: 'Total Components', count: 85, href: '/components' }],
+    sections: [
+      {
+        title: 'Launch',
+        items: [
+          {
+            text: 'Watermelon UI is now live with a comprehensive collection of React components.',
+          },
+          {
+            text: 'launched with 85+ components in the initial release.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    version: '1.2.1',
+    date: 'Feb 12, 2026',
     stats: [
-      { label: "Components Added", count: 24, href: "/components" },
-      { label: "New Categories", count: 6, href: "/components" },
+      { label: 'Components Added', count: 24, href: '/components' },
+      { label: 'New Categories', count: 6, href: '/components' },
     ],
     sections: [
       {
-        title: "Components",
+        title: 'Components',
         items: [
           {
-            text: "Added 24 new components to the registry with polished previews and copy-ready install commands."
+            text: 'Added 24 new components to the registry with polished previews and copy-ready install commands.',
           },
           {
-            text: "Published full documentation and usage examples for all new additions."
-          }
-        ]
-      }
-    ]
+            text: 'Published full documentation and usage examples for all new additions.',
+          },
+        ],
+      },
+    ],
   },
   {
-    version: "1.2.0",
-    date: "Feb 11, 2026",
+    version: '1.2.0',
+    date: 'Feb 11, 2026',
     sections: [
       {
-        title: "Changelog",
+        title: 'Changelog',
         items: [
           {
-            text: "Redesigned Changelog page with a modern vertical timeline visualization."
+            text: 'Redesigned Changelog page with a modern vertical timeline visualization.',
           },
           {
-            text: "Integrated Changelog with DocPage components for design consistency."
-          }
-        ]
-      }
-    ]
+            text: 'Integrated Changelog with DocPage components for design consistency.',
+          },
+        ],
+      },
+    ],
   },
   {
-    version: "1.1.5",
-    date: "Feb 10, 2026",
+    version: '1.1.5',
+    date: 'Feb 10, 2026',
     sections: [
       {
-        title: "UX & SEO",
+        title: 'UX & SEO',
         items: [
           {
-            text: "Improved SEO with standardized head components and canonical links.",
+            text: 'Improved SEO with standardized head components and canonical links.',
           },
           {
-            text: "Added mobile preview restrictions for dashboards and blocks to ensure optimal viewing experience."
+            text: 'Added mobile preview restrictions for dashboards and blocks to ensure optimal viewing experience.',
           },
           {
-            text: "Configured SPA routing for Cloudflare compatibility to fix direct link 404 errors."
-          }
-        ]
+            text: 'Configured SPA routing for Cloudflare compatibility to fix direct link 404 errors.',
+          },
+        ],
       },
       {
-        title: "Fixes",
+        title: 'Fixes',
         items: [
           {
-            text: "Fixed SVG namespace errors in logo components."
+            text: 'Fixed SVG namespace errors in logo components.',
           },
           {
-            text: "Converted onboarding components to use NativeWind for better consistency."
-          }
-        ]
-      }
-    ]
+            text: 'Converted onboarding components to use NativeWind for better consistency.',
+          },
+        ],
+      },
+    ],
   },
   {
-    version: "1.1.0",
-    date: "Feb 08, 2026",
+    version: '1.1.0',
+    date: 'Feb 08, 2026',
     sections: [
       {
-        title: "Performance",
+        title: 'Performance',
         items: [
           {
-            text: "Optimized build performance by switching to PrismLight for syntax highlighting.",
-            tags: ["performance", "build"]
+            text: 'Optimized build performance by switching to PrismLight for syntax highlighting.',
+            tags: ['performance', 'build'],
           },
           {
-            text: "Refined Vite manualChunks configuration to reduce main bundle size."
-          }
-        ]
+            text: 'Refined Vite manualChunks configuration to reduce main bundle size.',
+          },
+        ],
       },
       {
-        title: "Components",
+        title: 'Components',
         items: [
           {
-            text: "Added responsive viewer to desktop modals for device preview simulation."
-          }
-        ]
-      }
-    ]
+            text: 'Added responsive viewer to desktop modals for device preview simulation.',
+          },
+        ],
+      },
+    ],
   },
   {
-    version: "1.0.0",
-    date: "Feb 05, 2026",
+    version: '1.0.0',
+    date: 'Feb 05, 2026',
     sections: [
       {
-        title: "Initial Launch",
+        title: 'Initial Launch',
         items: [
           {
-            text: "Watermelon UI is now live with a comprehensive collection of React components, dashboards, and blocks."
-          }
-        ]
-      }
-    ]
-  }
+            text: 'Watermelon UI is now live with a comprehensive collection of React components, dashboards, and blocks.',
+          },
+        ],
+      },
+    ],
+  },
 ];
