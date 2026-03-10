@@ -53,7 +53,7 @@ export function DashboardHeader() {
         <div className="flex gap-4 items-center w-full     ">
           <div className="flex items-center gap-2 md:border-l dark:border-zinc-500 pl-4">
             <span className="text-sm text-muted-foreground">Test Mode</span>
-            <Switch className="data-[state=checked]:bg-zinc-400 dark:data-[state=checked]:bg-zinc-100" />
+            <Switch className="data-[state=checked]:bg-zinc-400 dark:data-[state=checked]:bg-zinc-500" />
           </div>
 
           <Dialog>
