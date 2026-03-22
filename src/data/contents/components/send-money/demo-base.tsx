@@ -1,11 +1,9 @@
 import React from 'react';
-import { SendMoney } from './index'; 
-import type { Card } from './index';
+import { SendMoney } from './base';
+import type { Card } from './base';
 
 const SendMoneyDemo: React.FC = () => {
-
-
- const initialCards: Card[] = [
+  const initialCards: Card[] = [
     { id: '1', last4: '6756', brand: 'visa' },
     { id: '2', last4: '4632', brand: 'mastercard' },
   ];
@@ -14,12 +12,7 @@ const SendMoneyDemo: React.FC = () => {
     console.log('Proceeding with:', data);
   };
 
-  return (
-      <SendMoney 
-        cards={initialCards}
-        onProceed={handleProceed}
-      />
-  );
+  return <SendMoney cards={initialCards} onProceed={handleProceed} />;
 };
 
 export default SendMoneyDemo;

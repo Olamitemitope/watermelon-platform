@@ -1,4 +1,4 @@
-import { StatusPicker } from '.';
+import { StatusPicker } from './original';
 
 const items = [
   { id: 1, emoji: '🌴', name: 'On Vacation' },

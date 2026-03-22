@@ -1,7 +1,7 @@
 import { AiFillSignal } from 'react-icons/ai';
 import { HugeiconsIcon } from '@hugeicons/react';
 import { Hamburger01Icon, Invoice02Icon } from '@hugeicons/core-free-icons';
-import { TransactionList, type Transaction } from '.';
+import { TransactionList, type Transaction } from './original';
 
 const data: Transaction[] = [
   {

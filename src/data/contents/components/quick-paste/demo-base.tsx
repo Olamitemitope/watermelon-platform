@@ -1,6 +1,6 @@
 'use client';
 
-import { QuickPaste, type PasteData } from './index';
+import { QuickPaste, type PasteData } from './base';
 
 export default function QuickPasteDemo() {
   const mockUsers: Record<string, PasteData> = {

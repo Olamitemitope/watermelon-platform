@@ -1,4 +1,4 @@
-import { SplitToEdit } from ".";
+import { SplitToEdit } from './original';
 
 export default function SplitToEditDemo() {
   return (

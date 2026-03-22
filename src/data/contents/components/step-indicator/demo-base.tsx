@@ -1,4 +1,4 @@
-import { StepIndicator } from '.';
+import { StepIndicator } from './base';
 import {
   FaCircleArrowDown,
   FaCircleArrowUp,

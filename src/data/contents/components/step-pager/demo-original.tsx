@@ -1,4 +1,4 @@
-import { StepPager } from '.';
+import { StepPager } from './original';
 import { BsMusicNoteList } from 'react-icons/bs';
 import { HiOutlineAdjustments } from 'react-icons/hi';
 import { MdFavorite } from 'react-icons/md';

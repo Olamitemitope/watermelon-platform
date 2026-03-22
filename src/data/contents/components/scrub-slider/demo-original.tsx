@@ -1,5 +1,4 @@
-
-import { ScrubSlider } from '.';
+import { ScrubSlider } from './original';
 
 function ScrubSliderDemo() {
   return <ScrubSlider initialValue={10} tickCount={30} />;
