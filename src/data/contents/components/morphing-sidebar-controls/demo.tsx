@@ -1,4 +1,4 @@
-import MorphingSidebarControls from '.';
+import MorphingSidebarControls from './index';
 
 export default function MorphingSidebarControlsDemo() {
   return (
