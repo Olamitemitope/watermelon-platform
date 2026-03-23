@@ -72,7 +72,8 @@ export function ComponentModal({ item, onClose }: ComponentModalProps) {
     ...(componentCodeOriginal ? [{ name: `${item.slug}.tsx`, content: componentCodeOriginal }] : []),
   ];
 
-  const ActiveComponent = activeCodeTab === 'base' ? item.component.base : item.component.original;
+  const OriginalComponent = item.component.original;
+  const BaseComponent = item.component.base;
 
   // Mobile View - Drawer with preview on top
   // Mobile View — Drawer
@@ -153,7 +154,12 @@ export function ComponentModal({ item, onClose }: ComponentModalProps) {
                     </div>
                   }
                 >
-                  <ActiveComponent key={reloadKey} />
+                  <div className={activeCodeTab === 'original' ? 'contents' : 'hidden'}>
+                    <OriginalComponent key={`orig-${reloadKey}`} />
+                  </div>
+                  <div className={activeCodeTab === 'base' ? 'contents' : 'hidden'}>
+                    {BaseComponent && <BaseComponent key={`base-${reloadKey}`} />}
+                  </div>
                 </Suspense>
               </div>
             </section>
@@ -254,9 +260,18 @@ export function ComponentModal({ item, onClose }: ComponentModalProps) {
               </div>
 
               {componentCodeOriginal && componentCodeBase ? (
-                <CodeBlock showLineNumbers title={activeCodeTab === 'base' ? `${item.slug}-base.tsx` : `${item.slug}.tsx`}>
-                  {activeCodeTab === 'base' ? componentCodeBase : componentCodeOriginal}
-                </CodeBlock>
+                <div className="space-y-4">
+                  <div className={activeCodeTab === 'original' ? 'block' : 'hidden'}>
+                    <CodeBlock showLineNumbers title={`${item.slug}.tsx`}>
+                      {componentCodeOriginal}
+                    </CodeBlock>
+                  </div>
+                  <div className={activeCodeTab === 'base' ? 'block' : 'hidden'}>
+                    <CodeBlock showLineNumbers title={`${item.slug}-base.tsx`}>
+                      {componentCodeBase}
+                    </CodeBlock>
+                  </div>
+                </div>
               ) : (
                 <div className="h-32 flex items-center justify-center text-muted-foreground animate-pulse text-sm">
                   Loading source code…
@@ -544,7 +559,7 @@ export function ComponentModal({ item, onClose }: ComponentModalProps) {
               </button>
               <DialogClose asChild>
                 <button
-                  className="size-8 md:size-9.5 rounded-lg  flex items-center justify-center hover:bg-neutral-800 transition-colors"
+                  className="size-8 md:size-9.5 rounded-lg  flex items-center justify-center dark:hover:bg-neutral-800 hover:bg-neutral-200/50 transition-colors"
                   aria-label="Close modal"
                 >
                   <HugeiconsIcon icon={Cancel01Icon} size={18} />
@@ -565,7 +580,12 @@ export function ComponentModal({ item, onClose }: ComponentModalProps) {
                       Loading component...
                     </div>
                   }>
-                    <ActiveComponent key={`${reloadKey}-${activeCodeTab}`} />
+                    <div className={activeCodeTab === 'original' ? 'contents' : 'hidden'}>
+                      <OriginalComponent key={`orig-${reloadKey}`} />
+                    </div>
+                    <div className={activeCodeTab === 'base' ? 'contents' : 'hidden'}>
+                      {BaseComponent && <BaseComponent key={`base-${reloadKey}`} />}
+                    </div>
                   </Suspense>
                
               </div>
@@ -576,9 +596,16 @@ export function ComponentModal({ item, onClose }: ComponentModalProps) {
               <div className="h-full overflow-y-auto p-4 space-y-8">
                 {componentCodeOriginal && componentCodeBase ? (
                   <div className="space-y-4">
-                    <CodeBlock showLineNumbers title={activeCodeTab === 'base' && item.hasVariants ? `${item.slug}-base.tsx` : `${item.slug}.tsx`}>
-                      {activeCodeTab === 'base' ? componentCodeBase : componentCodeOriginal}
-                    </CodeBlock>
+                    <div className={activeCodeTab === 'original' ? 'block' : 'hidden'}>
+                      <CodeBlock showLineNumbers title={`${item.slug}.tsx`}>
+                        {componentCodeOriginal}
+                      </CodeBlock>
+                    </div>
+                    <div className={activeCodeTab === 'base' ? 'block' : 'hidden'}>
+                      <CodeBlock showLineNumbers title={`${item.slug}-base.tsx`}>
+                        {componentCodeBase}
+                      </CodeBlock>
+                    </div>
                   </div>
                 ) : (
                   <div className="h-32 flex items-center justify-center text-muted-foreground animate-pulse text-sm">
