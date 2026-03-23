@@ -1,10 +1,10 @@
 import { Suspense, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Dialog, DialogContent, DialogDescription, DialogTitle } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogDescription, DialogTitle, DialogClose } from '@/components/ui/dialog';
 import type { RegistryItem } from '@/data/registry';
 import { CodeBlock } from '@/components/mdx/code-block';
 import { HugeiconsIcon } from '@hugeicons/react';
-import { ViewIcon, SourceCodeIcon, ReloadIcon, ArrowUpRight01FreeIcons } from '@/lib/hugeicons';
+import { ViewIcon, SourceCodeIcon, ReloadIcon, ArrowUpRight01FreeIcons, Cancel01Icon } from '@/lib/hugeicons';
 import { ThemeToggle } from '../layout/theme-toggle';
 import { PromptItems } from '@/components/prompt-items';
 import type { ComponentFile } from '@/lib/types';
@@ -136,10 +136,10 @@ export function ComponentModal({ item, onClose }: ComponentModalProps) {
                   <button
                     onClick={handleReload}
                     aria-label="Reload component preview"
-                    className="p-1.5 rounded-md border bg-background hover:bg-accent transition"
+                    className="size-8 rounded-lg border border-input/50 bg-background flex items-center justify-center hover:bg-accent transition-colors"
                     title="Reload preview"
                   >
-                    <HugeiconsIcon icon={ReloadIcon} size={14} />
+                    <HugeiconsIcon icon={ReloadIcon} size={18} />
                   </button>
                 </div>
               </div>
@@ -275,7 +275,7 @@ export function ComponentModal({ item, onClose }: ComponentModalProps) {
   // Desktop View - Dialog
   return (
     <Dialog open={!!item} onOpenChange={(open) => !open && onClose()}>
-      <DialogContent onOpenAutoFocus={(e) => e.preventDefault()} className="max-w-none sm:max-w-none w-[90vw] h-[90vh] p-0 gap-0 overflow-hidden flex flex-row bg-background border rounded-xl">
+      <DialogContent showCloseButton={false} onOpenAutoFocus={(e) => e.preventDefault()} className="max-w-none sm:max-w-none w-[90vw] h-[90vh] p-0 gap-0 overflow-hidden flex flex-row bg-background border rounded-xl">
         <DialogTitle className="sr-only">{item.name}</DialogTitle>
         <DialogDescription className="sr-only">
           {item.description}
@@ -397,7 +397,7 @@ export function ComponentModal({ item, onClose }: ComponentModalProps) {
                           <TabsTrigger value="manual">Manual</TabsTrigger>
                         </TabsList>
                         <TabsContents>
-                          <TabsContent value="cli">
+                          <TabsContent value="cli" forceMount className="data-[state=inactive]:hidden">
                             <LayoutGroup id={`install-cli-right-${item.slug}`}>
                               <InstallationCmd
                                 activeCodeTab={activeCodeTab}
@@ -429,7 +429,7 @@ export function ComponentModal({ item, onClose }: ComponentModalProps) {
                               )}
                             </div>
                           </TabsContent>
-                          <TabsContent value="manual" className='space-y-6'>
+                          <TabsContent value="manual" forceMount className="space-y-6 data-[state=inactive]:hidden">
                             {/* Manual install (dependencies-driven) */}
                             <ManualInstallationCmd
                               activePackageManager={activePackageManager}
@@ -524,7 +524,7 @@ export function ComponentModal({ item, onClose }: ComponentModalProps) {
             )}
 
             {/* Actions */}
-            <div className="flex items-center gap-2 mr-8">
+            <div className="flex items-center gap-1.5">
               <Link
                 to={`/components/${item.slug}`}
                 onClick={onClose}
@@ -535,20 +535,28 @@ export function ComponentModal({ item, onClose }: ComponentModalProps) {
               </Link>
               <ThemeToggle />
               <button
-                className="p-2 bg-background/80 backdrop-blur rounded-md border shadow-sm hover:bg-accent transition-colors"
+                className="size-8 md:size-10 rounded-lg border border-input/50 bg-background flex items-center justify-center hover:bg-accent transition-colors"
                 onClick={handleReload}
                 aria-label="Reload component preview"
                 title="Reload preview"
               >
-                <HugeiconsIcon icon={ReloadIcon} size={16} />
+                <HugeiconsIcon icon={ReloadIcon} size={18} />
               </button>
+              <DialogClose asChild>
+                <button
+                  className="size-8 md:size-9.5 rounded-lg  flex items-center justify-center hover:bg-neutral-800 transition-colors"
+                  aria-label="Close modal"
+                >
+                  <HugeiconsIcon icon={Cancel01Icon} size={18} />
+                </button>
+              </DialogClose>
             </div>
           </div>
 
           {/* Content */}
           <div className="flex-1 overflow-y-auto relative">
             {/* Preview Panel */}
-            <TabsContent value="preview">
+            <TabsContent value="preview" forceMount className="data-[state=inactive]:hidden">
               <div className="h-full flex items-center justify-center p-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-muted/50 via-transparent to-transparent">
               
                   <Suspense fallback={
@@ -564,7 +572,7 @@ export function ComponentModal({ item, onClose }: ComponentModalProps) {
             </TabsContent>
 
             {/* Code Panel */}
-            <TabsContent value="code">
+            <TabsContent value="code" forceMount className="data-[state=inactive]:hidden">
               <div className="h-full overflow-y-auto p-4 space-y-8">
                 {componentCodeOriginal && componentCodeBase ? (
                   <div className="space-y-4">
