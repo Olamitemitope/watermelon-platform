@@ -1,5 +1,5 @@
-import { EventReminders } from './index';
-import type { Reminder, ReminderType } from './index';
+import { EventReminders } from './original';
+import type { Reminder, ReminderType } from './original';
 
 const PRESET_DATA: Reminder[] = [
   {

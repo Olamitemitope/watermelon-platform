@@ -1,6 +1,6 @@
 "use client";
 
-import { AaveSwapComponent } from "./index";
+import { AaveSwapComponent } from "./base";
 
 export default function AaveSwapComponentDemo() {
   return (

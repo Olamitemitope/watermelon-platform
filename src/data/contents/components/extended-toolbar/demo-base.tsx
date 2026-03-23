@@ -1,4 +1,4 @@
-import { ExtendedToolbar } from './index';
+import { ExtendedToolbar } from './base';
 import {
   BsChatLeftFill,
   BsFillArchiveFill,

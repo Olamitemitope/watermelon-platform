@@ -1,4 +1,4 @@
-import { ContextualAIBar } from ".";
+import { ContextualAIBar } from "./base";
 import { AudioLines } from "lucide-react";
 import { BsMusicNote } from "react-icons/bs";
 import { RiScissorsFill } from "react-icons/ri";

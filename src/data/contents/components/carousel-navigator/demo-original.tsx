@@ -1,4 +1,4 @@
-import { CarouselNavigator } from ".";
+import { CarouselNavigator } from "./original";
 import { useState, useEffect } from "react";
 
 const customThemes = [

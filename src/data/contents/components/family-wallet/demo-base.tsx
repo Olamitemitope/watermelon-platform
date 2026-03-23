@@ -1,4 +1,4 @@
-import FamilyWallet from ".";
+import FamilyWallet from "./base";
 
 
 
