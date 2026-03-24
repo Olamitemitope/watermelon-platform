@@ -1,5 +1,5 @@
-import { DropdownDisclosure } from ".";
-import type { Model } from ".";
+import { DropdownDisclosure } from "./original";
+import type { Model } from "./original";
 import { useState } from "react";
 import { FaMeta } from "react-icons/fa6";
 import { HugeiconsIcon } from "@hugeicons/react";

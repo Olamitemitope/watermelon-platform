@@ -1,4 +1,4 @@
-import { EditableChip } from '.';
+import { EditableChip } from './original';
 
 function EditableChipDemo() {
   return (

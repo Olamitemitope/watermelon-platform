@@ -1,4 +1,4 @@
-import {FeedbackComponent} from '.';
+import {FeedbackComponent} from './base';
 
 export default function FeedbackComponentDemo() {
   const handleSubmit = (data: { rating: 'up' | 'down'; feedback: string }) => {

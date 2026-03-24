@@ -1,4 +1,4 @@
-import { Dock } from '.';
+import { Dock } from './base';
 import {
   Search01Icon,
   NoteIcon,

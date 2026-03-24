@@ -1,4 +1,4 @@
-import { VoiceChatDisclosure } from '.';
+import { VoiceChatDisclosure } from './base';
 
 const myUsers = [
   {

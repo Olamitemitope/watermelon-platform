@@ -1,5 +1,5 @@
 
-import { Tags } from '.'
+import { Tags } from './original'
 
 const tags = [
     { id: "javascript", label: "Javascript" },

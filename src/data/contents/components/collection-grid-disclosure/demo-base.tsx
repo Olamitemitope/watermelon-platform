@@ -1,4 +1,4 @@
-import { DisclosureCard } from '.';
+import { DisclosureCard } from './base';
 import { FaCarrot, FaGraduationCap, FaPills, FaPlug } from 'react-icons/fa';
 import { TbHomeFilled, TbPlayerPlayFilled } from 'react-icons/tb';
 import { FaBottleWater } from 'react-icons/fa6';

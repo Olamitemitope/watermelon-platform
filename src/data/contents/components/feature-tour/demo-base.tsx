@@ -1,4 +1,4 @@
-import { FeatureTour, type TourStep } from '.';
+import { FeatureTour, type TourStep } from './base';
 import { Activity } from 'lucide-react';
 import { FaCircleCheck, FaKey, FaUser } from 'react-icons/fa6';
 import { IoFolderOpenSharp } from 'react-icons/io5';
