@@ -4,8 +4,6 @@ import { CodeBlock } from '@/components/mdx';
 import { CopyButton } from '@/components/animate-ui/components/buttons/copy';
 import { DocPage, DocHeader, DocSection, DocText } from '@/components/docs';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { HugeiconsIcon } from '@hugeicons/react';
-import { SourceCodeIcon } from '@/lib/hugeicons';
 
 function PackageTabs({
   pnpm,

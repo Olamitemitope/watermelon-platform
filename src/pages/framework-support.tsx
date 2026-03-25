@@ -1,14 +1,11 @@
 import { SEOHead } from '@/components/seo-head';
-import { CodeBlock } from '@/components/mdx';
 import { Tick01Icon } from '@/lib/hugeicons';
 import { HugeiconsIcon } from '@hugeicons/react';
 import {
-  DocCard,
   DocHeader,
   DocPage,
   DocSection,
   DocTable,
-  DocText,
 } from '@/components/docs';
 
 const frameworks = [
