@@ -1,24 +1,25 @@
-"use client";
-import { motion } from "motion/react";
+'use client';
+import { motion } from 'motion/react';
 import {
   Card,
   CardHeader,
   CardTitle,
   CardDescription,
   CardContent,
-} from "@/components/base-ui/card";
+} from '@/components/base-ui/card';
+import { MdDesignServices, MdDeveloperMode } from 'react-icons/md';
 
 const MotionCard = motion(Card);
 
 const Bento1 = () => {
   const buttonLinks = [
-    "Design Workshops",
-    "Workshop",
-    "Trend Report",
-    "Asset library",
-    "Premium designers",
-    "Multillingual support",
-    "Design Workshops",
+    'Design Workshops',
+    'Workshop',
+    'Trend Report',
+    'Asset library',
+    'Premium designers',
+    'Multillingual support',
+    'Design Workshops',
   ];
 
   const circleRows = [
@@ -35,18 +36,17 @@ const Bento1 = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#0E0E0E] relative flex items-center justify-center px-4 py-8 sm:p-8 font-['Sansation',sans-serif]">
-
-      <div className="max-w-[1100px] w-full flex flex-col gap-6 mx-auto">
+    <div className="relative flex min-h-screen items-center justify-center bg-[#0E0E0E] px-4 py-8 font-['Sansation',sans-serif] sm:p-8">
+      <div className="mx-auto flex w-full max-w-[1100px] flex-col gap-6">
         {/* Row 1 - 3 Columns */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {/* Card 1 */}
-          <Card className="bg-linear-to-b from-[#232323] to-[#121212] rounded-[2rem] p-6 md:p-8 min-h-[320px] md:min-h-[360px] flex flex-col items-center shadow-lg shadow-black/20 relative gap-0 max-w-[420px] md:max-w-none mx-auto w-full">
-            <div className="bg-[#111110] rounded-[2rem] w-[300px] p-6 flex flex-col mt-6 relative border border-transparent">
-              <span className="text-[#FFDC17] font-bold text-[20px] tracking-wide">
+          <Card className="relative mx-auto flex min-h-[320px] w-full max-w-[420px] flex-col items-center gap-0 rounded-[2rem] bg-linear-to-b from-[#232323] to-[#121212] p-6 shadow-lg shadow-black/20 md:min-h-[360px] md:max-w-none md:p-8">
+            <div className="relative mt-6 flex w-[300px] flex-col rounded-[2rem] border border-transparent bg-[#111110] p-6">
+              <span className="text-[20px] font-bold tracking-wide text-[#FFDC17]">
                 Growth
               </span>
-              <div className="flex items-end justify-between mt-0 relative h-[120px] mb-8">
+              <div className="relative mt-0 mb-8 flex h-[120px] items-end justify-between">
                 {[
                   { top: 52, bottom: 25 },
                   { top: 38, bottom: 18 },
@@ -67,11 +67,11 @@ const Bento1 = () => {
                 ].map((b, i) => (
                   <div
                     key={i}
-                    className="relative w-[11.5px] h-full flex items-end justify-center"
+                    className="relative flex h-full w-[11.5px] items-end justify-center"
                   >
                     {b && (
                       <div
-                        className="absolute w-full bg-[#EED85D] rounded-full z-10"
+                        className="absolute z-10 w-full rounded-full bg-[#EED85D]"
                         style={{
                           bottom: `${b.bottom}%`,
                           height: `${b.top - b.bottom}%`,
@@ -81,8 +81,8 @@ const Bento1 = () => {
 
                     {i === 0 && (
                       <>
-                        <div className="absolute left-[50%] -translate-x-[50%] top-[8%] bottom-[-20px] w-px bg-[#564900] z-0" />
-                        <span className="absolute left-[50%] top-[calc(100%+5px)] ml-2 text-[#6C6B68] text-[13px] font-medium whitespace-nowrap">
+                        <div className="absolute top-[8%] bottom-[-20px] left-[50%] z-0 w-px -translate-x-[50%] bg-[#564900]" />
+                        <span className="absolute top-[calc(100%+5px)] left-[50%] ml-2 text-[13px] font-medium whitespace-nowrap text-[#6C6B68]">
                           Mar, 10
                         </span>
                       </>
@@ -90,8 +90,8 @@ const Bento1 = () => {
 
                     {i === 7 && (
                       <>
-                        <div className="absolute left-[50%] -translate-x-[50%] top-[8%] bottom-[-20px] w-px bg-[#564900] z-0" />
-                        <span className="absolute left-[50%] top-[calc(100%+5px)] ml-2 text-[#6C6B68] text-[13px] font-medium whitespace-nowrap">
+                        <div className="absolute top-[8%] bottom-[-20px] left-[50%] z-0 w-px -translate-x-[50%] bg-[#564900]" />
+                        <span className="absolute top-[calc(100%+5px)] left-[50%] ml-2 text-[13px] font-medium whitespace-nowrap text-[#6C6B68]">
                           Mar, 12
                         </span>
                       </>
@@ -99,8 +99,8 @@ const Bento1 = () => {
 
                     {i === 13 && (
                       <>
-                        <div className="absolute left-[50%] -translate-x-[50%] top-[8%] bottom-[-20px] w-px bg-[#564900] z-0" />
-                        <span className="absolute left-[50%] top-[calc(100%+5px)] ml-1.5 text-[#6C6B68] text-[13px] font-medium whitespace-nowrap">
+                        <div className="absolute top-[8%] bottom-[-20px] left-[50%] z-0 w-px -translate-x-[50%] bg-[#564900]" />
+                        <span className="absolute top-[calc(100%+5px)] left-[50%] ml-1.5 text-[13px] font-medium whitespace-nowrap text-[#6C6B68]">
                           Today
                         </span>
                       </>
@@ -110,39 +110,39 @@ const Bento1 = () => {
               </div>
             </div>
 
-            <div className="w-66 h-32 bg-[#101010]/40 rounded-[2rem] mx-auto absolute top-10"></div>
+            <div className="absolute top-10 mx-auto h-32 w-66 rounded-[2rem] bg-[#101010]/40"></div>
           </Card>
 
           {/* Card 2 */}
           <MotionCard
             initial="initial"
             whileHover="hover"
-            className="bg-linear-to-b from-[#232323] to-[#121212] rounded-[2rem] p-6 md:p-8 min-h-[340px] md:min-h-[380px] flex flex-col shadow-lg shadow-black/20 justify-end relative overflow-hidden cursor-pointer gap-0 max-w-[420px] md:max-w-none mx-auto w-full"
+            className="relative mx-auto flex min-h-[340px] w-full max-w-[420px] cursor-pointer flex-col justify-end gap-0 overflow-hidden rounded-[2rem] bg-linear-to-b from-[#232323] to-[#121212] p-6 shadow-lg shadow-black/20 md:min-h-[380px] md:max-w-none md:p-8"
           >
             {/* Design Graphic */}
-            <CardContent className="px-0 pt-0 absolute top-4 left-0 right-0 h-52 flex justify-center items-start">
-              <div className="relative w-[75%] max-w-[280px] h-[160px] flex justify-center mt-3">
+            <CardContent className="absolute top-4 right-0 left-0 flex h-52 items-start justify-center px-0 pt-0">
+              <div className="relative mt-3 flex h-[160px] w-[75%] max-w-[280px] justify-center">
                 {/* Deep Back card */}
                 <motion.div
                   variants={{
                     initial: { scale: 0.8, y: -20, opacity: 0 },
                     hover: { scale: 0.9, y: 0, opacity: 1 },
                   }}
-                  transition={{ ease: "easeInOut", duration: 0.4 }}
-                  className="absolute top-0 w-full bg-[#151515] rounded-[2rem] p-4 flex gap-4 h-fit z-0 shadow-lg shadow-black/50 border border-white/5"
+                  transition={{ ease: 'easeInOut', duration: 0.4 }}
+                  className="absolute top-0 z-0 flex h-fit w-full gap-4 rounded-[2rem] border border-white/5 bg-[#151515] p-4 shadow-lg shadow-black/50"
                 >
-                  <div className="min-w-[90px] h-[70px] rounded-2xl bg-black shadow-inner shadow-white/5"></div>
-                  <div className="flex flex-col mt-0.5 gap-1">
+                  <div className="h-[70px] min-w-[90px] rounded-2xl bg-black shadow-inner shadow-white/5"></div>
+                  <div className="mt-0.5 flex flex-col gap-1">
                     <div className="flex items-center gap-1.5">
-                      <div className="w-1.5 h-1.5 rounded-full bg-[#6C6B68]"></div>
-                      <span className="text-[#6C6B68] text-[11px] font-bold uppercase tracking-wider">
+                      <div className="h-1.5 w-1.5 rounded-full bg-[#6C6B68]"></div>
+                      <span className="text-[11px] font-bold tracking-wider text-[#6C6B68] uppercase">
                         Pending
                       </span>
                     </div>
-                    <span className="text-white font-bold text-[14px] tracking-wide leading-none">
+                    <span className="text-[14px] leading-none font-bold tracking-wide text-white">
                       Research
                     </span>
-                    <span className="text-[#6C6B68] text-[12px] font-semibold tracking-wide">
+                    <span className="text-[12px] font-semibold tracking-wide text-[#6C6B68]">
                       friday, 10:00
                     </span>
                   </div>
@@ -154,21 +154,23 @@ const Bento1 = () => {
                     initial: { scale: 0.9, y: 0 },
                     hover: { scale: 1, y: 28 },
                   }}
-                  transition={{ ease: "easeInOut", duration: 0.4 }}
-                  className="absolute top-0 w-full bg-[#151515] rounded-[2rem] p-4 flex items-center gap-4 h-fit z-10 border border-white/5"
+                  transition={{ ease: 'easeInOut', duration: 0.4 }}
+                  className="absolute top-0 z-10 flex h-fit w-full items-center gap-4 rounded-[2rem] border border-white/5 bg-[#151515] p-4"
                 >
-                  <div className="min-w-[90px] h-[70px] rounded-2xl bg-black shadow-inner shadow-white/5"></div>
-                  <div className="flex flex-col mt-0.5 gap-1">
+                  <div className="h-[70px] min-w-[90px] rounded-2xl bg-black shadow-inner shadow-white/5 flex items-center justify-center">
+                    <MdDeveloperMode className='size-6 md:size-9 text-[#FFDC17]' />
+                  </div>
+                  <div className="mt-0.5 flex flex-col gap-1">
                     <div className="flex items-center gap-1.5">
-                      <div className="w-1.5 h-1.5 rounded-full bg-[#6C6B68]"></div>
-                      <span className="text-[#6C6B68] text-[11px] font-bold uppercase tracking-wider">
+                      <div className="h-1.5 w-1.5 rounded-full bg-[#6C6B68]"></div>
+                      <span className="text-[11px] font-bold tracking-wider text-[#6C6B68] uppercase">
                         Done
                       </span>
                     </div>
-                    <span className="text-white font-bold text-[14px] tracking-wide leading-none">
+                    <span className="text-[14px] leading-none font-bold tracking-wide text-white">
                       Development
                     </span>
-                    <span className="text-[#6C6B68] text-[12px] font-semibold tracking-wide">
+                    <span className="text-[12px] font-semibold tracking-wide text-[#6C6B68]">
                       tuesday, 1:30
                     </span>
                   </div>
@@ -179,40 +181,41 @@ const Bento1 = () => {
                   variants={{
                     initial: {
                       opacity: 1,
-                      filter: "blur(0px)",
+                      filter: 'blur(0px)',
                       scale: 1,
                       y: 0,
                     },
                     hover: {
                       opacity: 0,
-                      filter: "blur(12px)",
+                      filter: 'blur(12px)',
                       scale: 0.95,
                       y: 10,
                     },
                   }}
-                  transition={{ duration: 0.4, ease: "easeInOut" }}
-                  className="absolute top-7 w-full bg-[#151515] rounded-[2rem] p-4 flex gap-4 h-fit z-20 border border-white/5"
+                  transition={{ duration: 0.4, ease: 'easeInOut' }}
+                  className="absolute top-7 z-20 flex h-fit w-full gap-4 rounded-[2rem] border border-white/5 bg-[#151515] p-4"
                 >
-                  <div className="min-w-[90px] h-[70px] rounded-2xl bg-black flex items-center justify-center relative shadow-inner shadow-white/5">
+                  <div className="relative flex h-[70px] min-w-[90px] items-center justify-center rounded-2xl bg-black shadow-inner shadow-white/5">
+                    <MdDesignServices className="size-6 md:size-9 text-[#FFDC17]" />
                   </div>
                   <div className="flex flex-col justify-center gap-1.5">
                     <div className="flex items-center gap-1.5">
-                      <div className="w-1.5 h-1.5 rounded-full bg-[#FFDC17]"></div>
-                      <span className="text-[#FFDC17] text-[11px] font-bold uppercase tracking-widest leading-none">
+                      <div className="h-1.5 w-1.5 rounded-full bg-[#FFDC17]"></div>
+                      <span className="text-[11px] leading-none font-bold tracking-widest text-[#FFDC17] uppercase">
                         New
                       </span>
                     </div>
-                    <span className="text-white font-bold text-[14px] tracking-wide leading-none">
+                    <span className="text-[14px] leading-none font-bold tracking-wide text-white">
                       Modern Design
                     </span>
-                    <span className="text-[#6C6B68] text-[12px] font-semibold tracking-wide">
+                    <span className="text-[12px] font-semibold tracking-wide text-[#6C6B68]">
                       monday, 12:30
                     </span>
                   </div>
                 </motion.div>
 
                 {/* Dashed lines underneath */}
-                <div className="absolute top-[138px] w-full flex flex-col gap-3">
+                <div className="absolute top-[138px] flex w-full flex-col gap-3">
                   <svg
                     width="268"
                     height="64"
@@ -304,10 +307,10 @@ const Bento1 = () => {
             </CardContent>
 
             <CardHeader className="relative z-20 px-0 pt-0">
-              <CardTitle className="text-[#C5C5C5] text-[1.4rem] font-bold mb-2">
+              <CardTitle className="mb-2 text-[1.4rem] font-bold text-[#C5C5C5]">
                 Custom - made designs
               </CardTitle>
-              <CardDescription className="text-[#918F8C] text-sm leading-relaxed pr-4 font-semibold">
+              <CardDescription className="pr-4 text-sm leading-relaxed font-semibold text-[#918F8C]">
                 with more than expertise to make your vision come to reality
               </CardDescription>
             </CardHeader>
@@ -317,17 +320,17 @@ const Bento1 = () => {
           <MotionCard
             initial="initial"
             whileHover="hover"
-            className="group bg-linear-to-b from-[#232323] to-[#121212] rounded-[2rem] p-6 md:p-8 min-h-[340px] md:min-h-[320px] lg:min-h-[380px] flex flex-col md:flex-row lg:flex-col md:items-center lg:items-start shadow-lg shadow-black/20 justify-end md:justify-between lg:justify-end relative overflow-hidden cursor-pointer gap-0 md:gap-8 lg:gap-0 max-w-[420px] md:max-w-none mx-auto w-full md:col-span-2 lg:col-span-1"
+            className="group relative mx-auto flex min-h-[340px] w-full max-w-[420px] cursor-pointer flex-col justify-end gap-0 overflow-hidden rounded-[2rem] bg-linear-to-b from-[#232323] to-[#121212] p-6 shadow-lg shadow-black/20 md:col-span-2 md:min-h-[320px] md:max-w-none md:flex-row md:items-center md:justify-between md:gap-8 md:p-8 lg:col-span-1 lg:min-h-[380px] lg:flex-col lg:items-start lg:justify-end lg:gap-0"
           >
-            <CardContent className="px-0 pt-0 relative h-40 md:h-[220px] md:w-[45%] lg:w-auto lg:h-40 -top-24 left-16 md:-top-3 md:right-3 lg:absolute lg:top-0 lg:left-8 lg:right-8 md:order-2 lg:order-1">
+            <CardContent className="relative -top-24 left-16 h-40 px-0 pt-0 md:-top-3 md:right-3 md:order-2 md:h-[220px] md:w-[45%] lg:absolute lg:top-0 lg:right-8 lg:left-8 lg:order-1 lg:h-40 lg:w-auto">
               <Graph />
             </CardContent>
 
-            <CardHeader className="relative z-10 md:w-[55%] lg:w-full md:order-1 lg:order-2 px-0">
-              <CardTitle className="text-[#C5C5C5] text-[1.4rem] font-bold mb-2 w-full">
+            <CardHeader className="relative z-10 px-0 md:order-1 md:w-[55%] lg:order-2 lg:w-full">
+              <CardTitle className="mb-2 w-full text-[1.4rem] font-bold text-[#C5C5C5]">
                 Auto Scale Handling
               </CardTitle>
-              <CardDescription className="text-[#918F8C] text-sm leading-relaxed pr-4 font-semibold w-full">
+              <CardDescription className="w-full pr-4 text-sm leading-relaxed font-semibold text-[#918F8C]">
                 we are ready to meet you evolving nends.
               </CardDescription>
             </CardHeader>
@@ -335,42 +338,42 @@ const Bento1 = () => {
         </div>
 
         {/* Row 2 - 2 Columns */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-6">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1fr_1fr]">
           {/* Card 4 */}
           <MotionCard
             initial="initial"
             whileHover="hover"
-            className="bg-linear-to-b from-[#232323] to-[#121212] rounded-[2rem] p-6 md:p-8 min-h-[200px] flex flex-col justify-end relative overflow-hidden shadow-lg shadow-black/20 cursor-pointer gap-0 max-w-[420px] md:max-w-none mx-auto w-full"
+            className="relative mx-auto flex min-h-[200px] w-full max-w-[420px] cursor-pointer flex-col justify-end gap-0 overflow-hidden rounded-[2rem] bg-linear-to-b from-[#232323] to-[#121212] p-6 shadow-lg shadow-black/20 md:max-w-none md:p-8"
           >
             {/* Background Dark Circles pattern */}
-            <div className="absolute -right-10 top-5 flex flex-col opacity-80">
+            <div className="absolute top-5 -right-10 flex flex-col opacity-80">
               {circleRows.map((row, rowIdx) => (
                 <div
                   key={rowIdx}
-                  className={`flex gap-4${rowIdx === 1 ? " ml-12" : ""}`}
+                  className={`flex gap-4${rowIdx === 1 ? 'ml-12' : ''}`}
                 >
                   {row.map(({ From, To, delay }, i) => (
                     <div
                       key={i}
-                      className="size-20 rounded-full bg-[#111111] shadow-[inset_0px_4px_12px_rgba(0,0,0,0.25),-3px_-3px_6px_rgba(50,50,50,0.25)] flex items-center justify-center relative"
+                      className="relative flex size-20 items-center justify-center rounded-full bg-[#111111] shadow-[inset_0px_4px_12px_rgba(0,0,0,0.25),-3px_-3px_6px_rgba(50,50,50,0.25)]"
                     >
                       <motion.div
                         className="absolute"
                         variants={{
-                          initial: { opacity: 1, filter: "blur(0px)" },
-                          hover: { opacity: 0, filter: "blur(16px)" },
+                          initial: { opacity: 1, filter: 'blur(0px)' },
+                          hover: { opacity: 0, filter: 'blur(16px)' },
                         }}
-                        transition={{ duration: 0.35, delay, ease: "easeOut" }}
+                        transition={{ duration: 0.35, delay, ease: 'easeOut' }}
                       >
                         <From />
                       </motion.div>
                       <motion.div
                         className="absolute"
                         variants={{
-                          initial: { opacity: 0, filter: "blur(16px)" },
-                          hover: { opacity: 1, filter: "blur(0px)" },
+                          initial: { opacity: 0, filter: 'blur(16px)' },
+                          hover: { opacity: 1, filter: 'blur(0px)' },
                         }}
-                        transition={{ duration: 0.35, delay, ease: "easeOut" }}
+                        transition={{ duration: 0.35, delay, ease: 'easeOut' }}
                       >
                         <To />
                       </motion.div>
@@ -381,12 +384,12 @@ const Bento1 = () => {
             </div>
 
             <CardHeader className="relative z-10 w-[70%] px-0">
-              <CardTitle className="text-[#C5C5C5] text-[1.4rem] font-bold mb-3 leading-snug">
+              <CardTitle className="mb-3 text-[1.4rem] leading-snug font-bold text-[#C5C5C5]">
                 WorkFlow
                 <br />
                 Management
               </CardTitle>
-              <CardDescription className="text-[#918F8C] text-sm font-semibold max-w-[60%]">
+              <CardDescription className="max-w-[60%] text-sm font-semibold text-[#918F8C]">
                 Seamlessly manage all you existing apps.
               </CardDescription>
             </CardHeader>
@@ -396,24 +399,24 @@ const Bento1 = () => {
           <MotionCard
             initial="initial"
             whileHover="hover"
-            className="bg-linear-to-b from-[#232323] to-[#121212] rounded-[2rem] group p-6 md:p-8 min-h-[200px] flex flex-row justify-between items-end relative overflow-hidden shadow-lg shadow-black/20 cursor-pointer gap-0 max-w-[420px] md:max-w-none mx-auto w-full"
+            className="group relative mx-auto flex min-h-[200px] w-full max-w-[420px] cursor-pointer flex-row items-end justify-between gap-0 overflow-hidden rounded-[2rem] bg-linear-to-b from-[#232323] to-[#121212] p-6 shadow-lg shadow-black/20 md:max-w-none md:p-8"
           >
             <CardHeader className="relative z-10 w-[50%] px-0">
-              <CardTitle className="text-[#C5C5C5] text-[1.4rem] font-bold mb-3 leading-snug">
+              <CardTitle className="mb-3 text-[1.4rem] leading-snug font-bold text-[#C5C5C5]">
                 Team Collaboration
                 <br />
                 effortlessly
               </CardTitle>
-              <CardDescription className="text-[#918F8C] text-sm font-semibold max-w-[70%]">
+              <CardDescription className="max-w-[70%] text-sm font-semibold text-[#918F8C]">
                 Seamless connection and collab with other teams
               </CardDescription>
             </CardHeader>
 
             {/* Overlapping Rings UI */}
-            <CardContent className="absolute right-12 top-[50%] -translate-y-[50%] flex items-center px-0">
+            <CardContent className="absolute top-[50%] right-12 flex -translate-y-[50%] items-center px-0">
               {/* Ring 1 - Red */}
               <div
-                className="size-18 rounded-full border-5 border-[#000000] outline-5 outline-[#BC2C2C] bg-cover bg-center relative z-4 shadow-md shadow-black/40"
+                className="relative z-4 size-18 rounded-full border-5 border-[#000000] bg-cover bg-center shadow-md shadow-black/40 outline-5 outline-[#BC2C2C]"
                 style={{
                   backgroundImage:
                     "url('https://randomuser.me/api/portraits/men/32.jpg')",
@@ -421,7 +424,7 @@ const Bento1 = () => {
               ></div>
               {/* Ring 2 - Purple */}
               <div
-                className="size-18 rounded-full border-5 border-[#000000] outline-5 outline-[#A855F7] bg-cover bg-center relative -ml-6 z-3 shadow-md shadow-black/40"
+                className="relative z-3 -ml-6 size-18 rounded-full border-5 border-[#000000] bg-cover bg-center shadow-md shadow-black/40 outline-5 outline-[#A855F7]"
                 style={{
                   backgroundImage:
                     "url('https://randomuser.me/api/portraits/women/44.jpg')",
@@ -429,7 +432,7 @@ const Bento1 = () => {
               ></div>
               {/* Ring 3 - Green with Glow */}
               <div
-                className="size-18 rounded-full border-5 border-[#000000] outline-5 outline-[#22C55E] bg-cover bg-center relative -ml-6 z-2 shadow-[0_0_30px_#22C55E80]"
+                className="relative z-2 -ml-6 size-18 rounded-full border-5 border-[#000000] bg-cover bg-center shadow-[0_0_30px_#22C55E80] outline-5 outline-[#22C55E]"
                 style={{
                   backgroundImage:
                     "url('https://randomuser.me/api/portraits/men/78.jpg')",
@@ -437,7 +440,7 @@ const Bento1 = () => {
               ></div>
               {/* Ring 4 - Dark grey */}
               <div
-                className="size-18 rounded-full border-5 border-[#3D3D3D] outline-5 outline-[#2A2928] bg-cover bg-center relative -ml-6 z-1"
+                className="relative z-1 -ml-6 size-18 rounded-full border-5 border-[#3D3D3D] bg-cover bg-center outline-5 outline-[#2A2928]"
                 style={{
                   backgroundImage:
                     "url('https://randomuser.me/api/portraits/women/40.jpg')",
@@ -450,8 +453,8 @@ const Bento1 = () => {
                   initial: { x: 0, y: 0 },
                   hover: { x: -140, y: -25 },
                 }}
-                transition={{ type: "spring", bounce: 0.4, duration: 0.8 }}
-                className="absolute -bottom-13 right-8 z-10 flex flex-col items-center drop-shadow-lg"
+                transition={{ type: 'spring', bounce: 0.4, duration: 0.8 }}
+                className="absolute right-8 -bottom-13 z-10 flex flex-col items-center drop-shadow-lg"
               >
                 <svg
                   width="24"
@@ -459,7 +462,7 @@ const Bento1 = () => {
                   viewBox="0 0 24 24"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="-rotate-12 -translate-x-1 transition-transform duration-300 group-hover:rotate-45"
+                  className="-translate-x-1 -rotate-12 transition-transform duration-300 group-hover:rotate-45"
                 >
                   <path
                     d="M4.64069 3.01217C4.19532 2.62886 3.5 2.94528 3.5 3.53509V21.4936C3.5 22.1585 4.30402 22.4921 4.77351 22.0226L9.67139 17.1247H17.8931C18.4907 17.1247 18.8049 16.4026 18.4069 15.962L4.64069 3.01217Z"
@@ -468,11 +471,11 @@ const Bento1 = () => {
                     strokeWidth="1.5"
                   />
                 </svg>
-                <div className="bg-[#FFDC17] text-black text-[14px] font-bold px-3 py-1 rounded-r-full rounded-bl-full rounded-tl-xl translate-x-6 relative flex items-center justify-center overflow-hidden min-w-[60px]">
+                <div className="relative flex min-w-[60px] translate-x-6 items-center justify-center overflow-hidden rounded-tl-xl rounded-r-full rounded-bl-full bg-[#FFDC17] px-3 py-1 text-[14px] font-bold text-black">
                   <motion.span
                     variants={{
-                      initial: { opacity: 1, filter: "blur(0px)" },
-                      hover: { opacity: 0, filter: "blur(4px)" },
+                      initial: { opacity: 1, filter: 'blur(0px)' },
+                      hover: { opacity: 0, filter: 'blur(4px)' },
                     }}
                     transition={{ duration: 0.3 }}
                     className="absolute"
@@ -481,8 +484,8 @@ const Bento1 = () => {
                   </motion.span>
                   <motion.span
                     variants={{
-                      initial: { opacity: 0, filter: "blur(4px)" },
-                      hover: { opacity: 1, filter: "blur(0px)" },
+                      initial: { opacity: 0, filter: 'blur(4px)' },
+                      hover: { opacity: 1, filter: 'blur(0px)' },
                     }}
                     transition={{ duration: 0.3 }}
                   >
@@ -490,7 +493,7 @@ const Bento1 = () => {
                   </motion.span>
                 </div>
 
-                <div className="size-30 bg-[#FFDC17]/15 blur-2xl absolute -top-6 -left-6"></div>
+                <div className="absolute -top-6 -left-6 size-30 bg-[#FFDC17]/15 blur-2xl"></div>
               </motion.div>
             </CardContent>
           </MotionCard>
@@ -498,14 +501,14 @@ const Bento1 = () => {
 
         {/* Row 3 - Tags */}
         <div className="flex flex-col items-center gap-4">
-          <div className="flex flex-wrap justify-center gap-4 max-w-3xl">
+          <div className="flex max-w-3xl flex-wrap justify-center gap-4">
             {buttonLinks.map((button, idx) => (
               <button
                 key={idx}
-                className="flex items-center gap-3 bg-[#171717] border-[#5C5C5C]/15 px-4 py-3 rounded-xl hover:bg-[#2A2928]/50 transition-colors border-2"
+                className="flex items-center gap-3 rounded-xl border-2 border-[#5C5C5C]/15 bg-[#171717] px-4 py-3 transition-colors hover:bg-[#2A2928]/50"
               >
                 <div className="size-4 rounded-full bg-[#4457FF]"></div>
-                <span className="text-[#918F8C] text-sm font-bold">
+                <span className="text-sm font-bold text-[#918F8C]">
                   {button}
                 </span>
               </button>
@@ -525,9 +528,9 @@ export default Bento1;
 
 const Graph = () => {
   const originalD =
-    "M1.86621 239L7.86621 226.5L15.3662 215.5L23.3662 205.5L31.3662 197.5L38.8662 192L48.3662 187L58.8662 183.5L67.3662 181.5L77.8662 179.5L87.8662 177L97.3662 172L103.866 166L108.866 159L111.866 151.5L112.866 144.5V137.5V134";
+    'M1.86621 239L7.86621 226.5L15.3662 215.5L23.3662 205.5L31.3662 197.5L38.8662 192L48.3662 187L58.8662 183.5L67.3662 181.5L77.8662 179.5L87.8662 177L97.3662 172L103.866 166L108.866 159L111.866 151.5L112.866 144.5V137.5V134';
   const extensionD =
-    "M112.866 134 C113.366 119.667 124.866 98.8004 166.866 154 C208.866 209.2 220.2 117.5 220.866 64.5 C220.866 50 220.966 19.3 255.366 18.5 C289.766 17.7 280.7 -17.1667 271.866 -34.5";
+    'M112.866 134 C113.366 119.667 124.866 98.8004 166.866 154 C208.866 209.2 220.2 117.5 220.866 64.5 C220.866 50 220.966 19.3 255.366 18.5 C289.766 17.7 280.7 -17.1667 271.866 -34.5';
 
   return (
     <svg
