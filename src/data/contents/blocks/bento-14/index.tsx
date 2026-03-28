@@ -108,7 +108,7 @@ function UploadCard() {
     },
     hover: {
       x: 0,
-      y: -25,
+      y: 0,
       transition: {
         duration: 0.7,
         ease: "easeInOut" as const,
@@ -147,7 +147,12 @@ function UploadCard() {
           </div>
         </div>
 
-        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-20">
+            <img 
+              src="https://assets.watermelon.sh/Download%20From%20Cloud.svg"
+              alt="Upload Icon"
+              className="w-12 h-12 mb-2 opacity-80 absolute left-1/2 top-38 -translate-x-1/2 z-10 pointer-events-none"
+            />
+        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center justify-center">
           <span className="text-md text-neutral-500 tracking-wide">
             Add your file
           </span>
@@ -389,7 +394,13 @@ function Card2() {
             />
 
             <div className="w-16 h-16 bg-[#333] rounded-full flex items-center justify-center border border-white/10">
-              <div className="w-10 h-10 bg-[#444] rounded-full" />
+              <div className="w-10 h-10 bg-[#444] rounded-full flex items-center justify-center" >
+                <img 
+                  src="https://assets.watermelon.sh/Music.png"
+                  alt="Audio Waveform"
+                  className="w-6 h-6 opacity-80"
+                />
+                </div>
             </div>
           </div>
 

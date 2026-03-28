@@ -33,11 +33,16 @@ const Bento5 = () => {
         {/* Box-2 */}
         <div className="p-px rounded-2xl bg-linear-to-t from-[3B3B3B]/45 to-[#A1A0A0]/45 w-full max-w-[400px]">
           <Card className="w-full h-[400px] rounded-2xl bg-[#16191D] flex flex-col justify-between relative overflow-hidden p-0 gap-0 border-0 ring-0 shadow-none">
-            <CardContent className="absolute top-0 left-0 w-full h-[250px] z-10 sm:scale-100 origin-top p-0">
+            <CardContent className="absolute z-30 top-0 left-0 w-full h-[250px] sm:scale-100 origin-top p-0">
               <Two className="w-full h-full" />
             </CardContent>
             <div className="w-90 h-10 rounded-full bg-[#1779BF]/50 blur-2xl absolute left-1/2 -translate-x-1/2 top-40" />
             <div className="w-90 h-10 rounded-full bg-[#1779BF] blur-2xl absolute left-1/2 -translate-x-1/2 top-40" />
+            <img 
+              src="https://assets.watermelon.sh/Globe.svg"
+              alt="Support Agent"
+              className="size-80 opacity-90 absolute left-1/2 top-40 -translate-x-1/2 -translate-y-1/2 z-20"
+            />
             <CardFooter className="w-full mt-auto p-8 relative z-20 items-start flex-col px-8 bg-transparent border-none">
               <CardTitle className="text-xl font-bold text-white">
                 Connect with Global Experts
