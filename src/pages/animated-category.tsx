@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect, useRef, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
-import { registry, type RegistryItem } from '@/data/registry';
+import { registry, type RegistryItem } from '@/data/animated-components-registry';
 import { RegistryCard } from '@/components/registry/registry-card';
 import { ComponentModal } from '@/components/registry/component-modal';
 import { SEOHead } from '@/components/seo-head';
@@ -8,7 +8,7 @@ import { CatalogPageHeader } from '@/components/layout/catalog-page-header';
 
 const ITEMS_PER_PAGE = 18;
 
-export default function CategoryPage() {
+export default function AnimatedCategoryPage() {
   const { category } = useParams<{ category: string }>();
   const [selectedItem, setSelectedItem] = useState<RegistryItem | null>(null);
   const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE);

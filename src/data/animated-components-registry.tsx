@@ -34,41 +34,41 @@ export interface RegistryItem {
 const mdxFiles = import.meta.glob("./contents/registry/*.mdx", { eager: true });
 
 // Load all Component Demos (eager) - from subfolders
-const demoBaseComponents = import.meta.glob("./contents/components/*/demo-base.tsx", { eager: true });
-const demoOriginalComponents = import.meta.glob("./contents/components/*/demo-original.tsx", { eager: true });
-const demoOldComponents = import.meta.glob("./contents/components/*/demo.tsx", { eager: true });
+const demoBaseComponents = import.meta.glob("./contents/animated-components/*/demo-base.tsx", { eager: true });
+const demoOriginalComponents = import.meta.glob("./contents/animated-components/*/demo-original.tsx", { eager: true });
+const demoOldComponents = import.meta.glob("./contents/animated-components/*/demo.tsx", { eager: true });
 
 // Load all Component Source Code (eager) - from subfolders
-const componentBaseSource = import.meta.glob("./contents/components/*/base.tsx", {
+const componentBaseSource = import.meta.glob("./contents/animated-components/*/base.tsx", {
   query: "?raw",
   import: "default",
   eager: true,
 });
 
-const componentOriginalSource = import.meta.glob("./contents/components/*/original.tsx", {
+const componentOriginalSource = import.meta.glob("./contents/animated-components/*/original.tsx", {
   query: "?raw",
   import: "default",
   eager: true,
 });
 
-const componentOldSource = import.meta.glob("./contents/components/*/index.tsx", {
+const componentOldSource = import.meta.glob("./contents/animated-components/*/index.tsx", {
   query: "?raw",
   import: "default",
   eager: true,
 });
 
 // Load all Component Demo Source Code (eager) - from subfolders
-const demoBaseSource = import.meta.glob("./contents/components/*/demo-base.tsx", {
+const demoBaseSource = import.meta.glob("./contents/animated-components/*/demo-base.tsx", {
   query: "?raw",
   import: "default",
   eager: true,
 });
-const demoOriginalSource = import.meta.glob("./contents/components/*/demo-original.tsx", {
+const demoOriginalSource = import.meta.glob("./contents/animated-components/*/demo-original.tsx", {
   query: "?raw",
   import: "default",
   eager: true,
 });
-const demoOldSource = import.meta.glob("./contents/components/*/demo.tsx", {
+const demoOldSource = import.meta.glob("./contents/animated-components/*/demo.tsx", {
   query: "?raw",
   import: "default",
   eager: true,
@@ -85,13 +85,13 @@ export const registry: RegistryItem[] = Object.values(mdxFiles)
 
     const slug = frontmatter.slug;
 
-    const demoBaseKey = `./contents/components/${slug}/demo-base.tsx`;
-    const demoOriginalKey = `./contents/components/${slug}/demo-original.tsx`;
-    const demoOldKey = `./contents/components/${slug}/demo.tsx`;
+    const demoBaseKey = `./contents/animated-components/${slug}/demo-base.tsx`;
+    const demoOriginalKey = `./contents/animated-components/${slug}/demo-original.tsx`;
+    const demoOldKey = `./contents/animated-components/${slug}/demo.tsx`;
     
-    const baseKey = `./contents/components/${slug}/base.tsx`;
-    const originalKey = `./contents/components/${slug}/original.tsx`;
-    const indexKey = `./contents/components/${slug}/index.tsx`;
+    const baseKey = `./contents/animated-components/${slug}/base.tsx`;
+    const originalKey = `./contents/animated-components/${slug}/original.tsx`;
+    const indexKey = `./contents/animated-components/${slug}/index.tsx`;
 
     const demoBaseModule = demoBaseComponents[demoBaseKey] || demoOldComponents[demoOldKey];
     const demoOriginalModule = demoOriginalComponents[demoOriginalKey] || demoOldComponents[demoOldKey];
