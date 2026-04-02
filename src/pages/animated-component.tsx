@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { registry } from '@/data/registry';
+import { registry } from '@/data/animated-components-registry';
 import { SEOHead } from '@/components/seo-head';
 import { CodeBlock } from '@/components/mdx/code-block';
 import { HugeiconsIcon } from '@hugeicons/react';
@@ -31,7 +31,7 @@ import { trackEvent } from '@/lib/analytics';
 
 type PackageManager = 'npm' | 'pnpm' | 'yarn' | 'bun';
 
-export default function ComponentPage() {
+export default function AnimatedComponentPage() {
   const { slug } = useParams<{ slug: string }>();
   const item = registry.find((i) => i.slug === slug);
   const isMobile = useIsMobile();
@@ -121,7 +121,7 @@ export default function ComponentPage() {
           {/* Header */}
           <div className="bg-background relative border-b px-4 pt-4 pb-3">
             <div className="text-muted-foreground mb-2 flex gap-2 text-xs">
-              <Link to="/">Components</Link>
+              <Link to="/animated-components">Animated Components</Link>
               <span>/</span>
               <span className="text-foreground font-medium">{item.name}</span>
             </div>
