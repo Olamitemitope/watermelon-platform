@@ -27,7 +27,7 @@ function VariantCard({
   onCodeClick: (v: UiVariant) => void;
 }) {
   return (
-    <div className="flex flex-col gap-3 px-4">
+    <div className="flex flex-col gap-3 px-4 h-full">
       {/* Title row */}
       <div className="flex items-center justify-between border-b py-3">
         <span className="text-sm font-medium text-foreground">{variant.title}</span>
@@ -49,9 +49,9 @@ function VariantCard({
          
         />
         <Suspense fallback={<ComponentSkeleton />}>
-         <div className="w-full max-w-md">
-          <variant.component />
-         </div>
+          <div className={variant.colSpan && variant.colSpan > 1 ? "flex w-full justify-center" : "flex w-full max-w-md justify-center"}>
+            <variant.component />
+          </div>
         </Suspense>
       </div>
     </div>
@@ -102,24 +102,43 @@ export default function ComponentCategoryPage() {
         </div>
 
         {/* ─ Variants grid ─ */}
-        <div className="flex flex-col divide-y divide-dashed">
-          {Array.from({ length: Math.ceil(variants.length / 2) }).map((_, rowIndex) => {
-            const rowVariants = variants.slice(rowIndex * 2, rowIndex * 2 + 2);
-            return (
-              <div
-                key={rowIndex}
-                className="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-dashed"
+        <div className="overflow-hidden">
+          <div 
+            className="group/grid grid -mr-px -mb-px border-dashed"
+            style={{ 
+              gridTemplateColumns: `repeat(var(--columns, 1), minmax(0, 1fr))` 
+            } as React.CSSProperties}
+          >
+            {/* Responsive CSS variables */}
+            <style>{`
+              @media (max-width: 767px) {
+                .group\\/grid { --columns: 1; }
+                .group\\/grid > div { grid-column: span 1 / span 1 !important; }
+              }
+              @media (min-width: 768px) and (max-width: 1023px) {
+                .group\\/grid { --columns: ${Math.min(meta?.columns || 2, 2)}; }
+                .group\\/grid > .col-span-2 { grid-column: span 2 / span 2; }
+              }
+              @media (min-width: 1024px) {
+                .group\\/grid { --columns: ${meta?.columns || 2}; }
+              }
+            `}</style>
+
+            {variants.map((variant) => (
+              <div 
+                key={variant.id} 
+                className={`border-r border-b border-dashed border-border ${variant.colSpan && variant.colSpan > 1 ? `lg:col-span-${variant.colSpan} col-span-2` : ""}`}
+                style={variant.colSpan && variant.colSpan > 1 ? {
+                  gridColumn: `span ${variant.colSpan} / span ${variant.colSpan}`
+                } : undefined}
               >
-                {rowVariants.map((variant) => (
-                  <VariantCard
-                    key={variant.id}
-                    variant={variant}
-                    onCodeClick={setActiveVariant}
-                  />
-                ))}
+                <VariantCard
+                  variant={variant}
+                  onCodeClick={setActiveVariant}
+                />
               </div>
-            );
-          })}
+            ))}
+          </div>
         </div>
       </div>
 

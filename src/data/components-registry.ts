@@ -13,6 +13,8 @@ export interface UiVariant {
   cli: string;
   /** Full source code shown in the code dialog */
   code: string;
+  /** Optional column span for the grid (defaults to 1) */
+  colSpan?: number;
 }
 
 export interface UiCategory {
@@ -22,6 +24,8 @@ export interface UiCategory {
   label: string;
   /** Short description shown on the category index card */
   description: string;
+  /** Preferred grid columns for this category (defaults to 2) */
+  columns?: number;
 }
 
 // ─── Dynamic Registry Loader ────────────────────────────────────────────────
