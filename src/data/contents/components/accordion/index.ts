@@ -30,6 +30,7 @@ export const variants: UiVariant[] = [
     component: AccordionVariant3,
     cli: "npx shadcn@latest add accordion",
     code: code3,
+    colSpan: 2,
   },
   {
     id: "accordion-04",
@@ -37,7 +38,8 @@ export const variants: UiVariant[] = [
     component: AccordionVariant4,
     cli: "npx shadcn@latest add accordion",
     code: code4,
-  }
+    colSpan: 2,
+  },
 ];
 
 export { category };
